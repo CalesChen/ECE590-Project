@@ -74,7 +74,7 @@ def testingSuite(alg):
     random.seed(1)
 
     # List of possible algs.
-    algs = ['SelectionSort', 'InsertionSort', \
+    algs = ['SelectionSort', 'InsertionSort',
             'BubbleSort', 'MergeSort', 'QuickSort']
 
     # Make sure the input is a proper alg to consider.
@@ -165,7 +165,7 @@ def testingSuite(alg):
 measureTime
 
 This function will generate lists of varying lengths and sort them using your
-implemented fuctions. It will time these sorting operations, and store the
+implemented functions. It will time these sorting operations, and store the
 average time across 30 trials of a particular size n. It will then create plots
 of runtime vs n. It will also output the slope of the log-log plots generated
 for several of the sorting algorithms.
@@ -207,8 +207,8 @@ def measureTime(preSorted=False, numTrials=30):
         N = [10 * x for x in N]
 
     # Store the different algs to consider.
-    algs = [SelectionSort, InsertionSort, \
-            BubbleSort, MergeSort, \
+    algs = [SelectionSort, InsertionSort,
+            BubbleSort, MergeSort,
             QuickSort, list.sort]
 
     # Preallocate space to store the runtimes.

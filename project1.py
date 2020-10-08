@@ -10,6 +10,14 @@ Date:       9/28 2020
 
 """
 SelectionSort
+
+This function will take in an original unsorted list and return the list which has been properly sorted through Selection sort.
+
+INPUTS
+unsortedList: ListToSort
+
+OUTPUTS
+sorted ListToSort
 """
 def SelectionSort(listToSort):  # SelectionSort, input is the list and output is still the list. In place sort.
     for i in range(0,len(listToSort)):  # the range of iteration
@@ -23,6 +31,14 @@ def SelectionSort(listToSort):  # SelectionSort, input is the list and output is
 
 """
 InsertionSort
+
+This function will take in an original unsorted list and return the list which has been properly sorted through Insertion sort.
+
+INPUTS
+unsortedList: ListToSort
+
+OUTPUTS
+sorted ListToSort
 """
 
 
@@ -46,6 +62,14 @@ def InsertionSort(listToSort):   # Insertion Sort, input is the list and output 
 
 """
 BubbleSort
+
+This function will take in an original unsorted list and return the list which has been properly sorted through Bubble sort.
+
+INPUTS
+unsortedList: ListToSort
+
+OUTPUTS
+sorted ListToSort
 """
 def BubbleSort(listToSort):  # Bubble Sort, input is the list and output is also the list. In place .
     length = len(listToSort)  # this variable is for readable
@@ -58,6 +82,14 @@ def BubbleSort(listToSort):  # Bubble Sort, input is the list and output is also
 
 """
 MergeSort
+
+This function will take in an original unsorted list and return the list which has been properly sorted through Merge sort.
+
+INPUTS
+unsortedList: ListToSort
+
+OUTPUTS
+sorted ListToSort
 """
 def MergeSort(listToSort):  # MergeSort, input is the list and output is also the list. Use new space but the output is inplace .
     def help(list,l,m,r): #merge two sorted array
@@ -105,6 +137,14 @@ QuickSort
 
 Sort a list with the call QuickSort(listToSort),
 or additionally specify i and j.
+
+    This function will take in an original unsorted list and return the list which has been properly sorted through Quick sort.
+
+INPUTS
+unsortedList: ListToSort
+
+OUTPUTS
+sorted ListToSort
 """
 def QuickSort(listToSort, i=0, j=None):
     # Set default value for j if None.
