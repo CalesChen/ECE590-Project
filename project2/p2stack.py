@@ -5,9 +5,9 @@ Fall 2020
 
 p2stack.py
 
-Partner 1: Xunyu Chu
-Partner 2: Ke Chen
-Date: 10/18 2020
+Partner 1:
+Partner 2:
+Date:
 """
 
 """
@@ -45,6 +45,7 @@ class Stack:
 
     """
     isFull function to check if the stack is full.
+    stack is full when numElems ia equal or bigger than the length of stack
     """
     def isFull(self):
         ##### IMPLEMENT! #####
@@ -52,6 +53,7 @@ class Stack:
 
     """
     isEmpty function to check if the stack is empty.
+    stack is empty when top refer to index -1 
     """
     def isEmpty(self):
         ##### IMPLEMENT! #####
@@ -62,6 +64,7 @@ class Stack:
     """
     def resize(self):
         ##### IMPLEMENT! #####
+        # store the original element of stack, build new stack with length*2 and store the original elements to new stack
         temp = self.stack
         self.stack = [None for x in range(0,len(temp)*2)]
         self.stack[0:len(temp)] = temp
@@ -72,8 +75,10 @@ class Stack:
     """
     def push(self, val):
         ##### IMPLEMENT! #####
+        #verify stack is not full
         if(self.isFull()):
             self.resize()
+            #push and chande top and numElems
         self.stack[self.numElems] = val
         self.numElems += 1
         self.top += 1
@@ -84,6 +89,7 @@ class Stack:
     """
     def pop(self):
         ##### IMPLEMENT! #####
+        #verify stack is not empty, then pop
         if(not self.isEmpty()):
             ans = self.stack[self.numElems - 1]
             self.top -= 1
