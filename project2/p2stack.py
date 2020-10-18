@@ -5,9 +5,9 @@ Fall 2020
 
 p2stack.py
 
-Partner 1:
-Partner 2:
-Date:
+Partner 1: Xunyu Chu
+Partner 2: Ke Chen
+Date: 10/18 2020
 """
 
 """
