@@ -64,7 +64,8 @@ class Stack:
     """
     def resize(self):
         ##### IMPLEMENT! #####
-        # store the original element of stack, build new stack with length*2 and store the original elements to new stack
+        # store the original element of stack, build new stack with length*2 
+        # and store the original elements to new stack
         temp = self.stack
         self.stack = [None for x in range(0,len(temp)*2)]
         self.stack[0:len(temp)] = temp
@@ -92,6 +93,7 @@ class Stack:
         #verify stack is not empty, then pop
         if(not self.isEmpty()):
             ans = self.stack[self.numElems - 1]
+            self.stack[self.numElems - 1] = None
             self.top -= 1
             self.numElems -= 1
             return  ans

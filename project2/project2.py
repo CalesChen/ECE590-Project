@@ -46,6 +46,8 @@ def findpath(maze, index):
 def reset(maze):
     for i in range(0, len(maze.adjList)):
         maze.adjList[i].visited = False
+        maze.adjList[i].pre = None
+    maze.path = []
     return
 
 
@@ -88,7 +90,8 @@ def bdfs(maze, alg):
                     # when we find the solution
                     if (i == maze.exit.rank):
                         ans = findpath(maze, i)
-                        return ans[::-1]
+                        maze.path = ans[::-1]
+                        return maze.path
 
     else:
         q = Queue()
@@ -123,7 +126,8 @@ def bdfs(maze, alg):
                         # Return Answer when find the exit
                         if (j == maze.exit.rank):
                             ans = findpath(maze, j)
-                            return ans[::-1]
+                            maze.path = ans[::-1]
+                            return maze.path
 
     return []
     ##### Your implementation goes here. #####
