@@ -72,7 +72,8 @@ class Queue:
         self.queue = [None for x in range(0, 2*len(temp))]
         if(self.rear > self.front) :
             self.queue[0: self.numElems] = \
-                temp[self.front : self.front + self.numElems]    #mark self.queue[0:0]
+                temp[self.front : self.front + self.numElems]    
+            #mark self.queue[0:0]
         else:
             #consider the case that rear is smaller than front
             #copy the elements which originally behind front to new queue
