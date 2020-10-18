@@ -5,9 +5,9 @@ Fall 2020
 
 p2queue.py
 
-Partner 1: Xunyu Chu
-Partner 2: Ke Chen
-Date: 10/18 2020
+Partner 1:Ke Chen
+Partner 2:Xunyu Chu
+Date:
 """
 
 """
@@ -47,6 +47,7 @@ class Queue:
 
     """
     isFull function to check if the queue is full.
+    Queue is full when numElems is equal or bigger than length of queue
     """
     def isFull(self):
         ##### IMPLEMENT! #####
@@ -54,6 +55,7 @@ class Queue:
 
     """
     isEmpty function to check if the queue is empty.
+    Queue is empty when numElems is 0
     """
     def isEmpty(self):
         ##### IMPLEMENT! #####
@@ -66,15 +68,18 @@ class Queue:
     def resize(self):
         ##### IMPLEMENT! #####
         temp = self.queue
+        #consider the case that rear is bigger than front
         self.queue = [None for x in range(0, 2*len(temp))]
         if(self.rear > self.front) :
-            # mark self.queue[0:0]
-            self.queue[0: self.numElems] = temp[self.front : \
-                                        self.front + self.numElems]
+            self.queue[0: self.numElems] = \
+                temp[self.front : self.front + self.numElems]    #mark self.queue[0:0]
         else:
-            self.queue[0:len(temp) - self.front] = temp[self.front : len(temp)]
-            self.queue[len(temp) - self.front : len(temp) \
-                                - self.front + self.rear] = temp[0 : self.rear]
+            #consider the case that rear is smaller than front
+            #copy the elements which originally behind front to new queue
+            self.queue[0:len(temp) - self.front] = \
+                temp[self.front : len(temp)]
+            self.queue[len(temp) - self.front : \
+                       len(temp) - self.front + self.rear] = temp[0 : self.rear]
         self.front = 0
         self.rear = self.numElems
         return
@@ -84,8 +89,10 @@ class Queue:
     """
     def push(self, val):
         ##### IMPLEMENT! #####
+        #verify the case that queue is not full
         if(self.isFull()):
             self.resize()
+            #push
         self.queue[self.rear] = val
         self.rear = (self.rear + 1) % len(self.queue)
         self.numElems += 1
@@ -96,8 +103,10 @@ class Queue:
     """
     def pop(self):
         ##### IMPLEMENT! #####
+        #verify the case queue is not empty
         if(self.isEmpty()):
             return None
+        #pop
         temp = self.queue[self.front]
         self.queue[self.front] = None
         self.front = (self.front + 1) % len(self.queue)
