@@ -7,7 +7,7 @@ p2queue.py
 
 Partner 1:Ke Chen
 Partner 2:Xunyu Chu
-Date:
+Date: 10/18 2020
 """
 
 """
